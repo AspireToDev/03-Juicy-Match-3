@@ -27,6 +27,8 @@ func _physics_process(_delta):
 	if dying:
 		queue_free()
 	if selected:
+		$Selected.emitting = true
+		$Highlight.show()
 		if z_index == default_z:
 			z_index = max_z
 			target_position = position
@@ -34,6 +36,8 @@ func _physics_process(_delta):
 		if modulate != highlight:
 			modulate = highlight
 	else:
+		$Selected.emitting = false
+		$Highlight.hide()
 		if z_index != default_z:
 			z_index = default_z
 			position = target_position		
@@ -44,6 +48,7 @@ func _physics_process(_delta):
 func move(change):
 	target_position = change
 	position = target_position
+	
 
 func dim():
 	pass
@@ -62,8 +67,12 @@ func make_color_bomb():
 	piece = "Color"
 
 func die():
+	var sound = get_node_or_null("/root/Game/Sounds/" + piece)
+	if sound != null:
+		sound.playing = true
 	dying = true
 	Global.update_goals(piece)
+	
 
 
 func constrain(xy):
@@ -91,3 +100,7 @@ func constrain(xy):
 			var max_x = Grid.grid_to_pixel(clamp(grid.x+1,grid.x,Grid.width-1), grid.y)
 			temp.x = clamp(temp.x,min_x.x,max_x.x)
 		return temp
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.

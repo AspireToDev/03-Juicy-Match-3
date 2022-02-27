@@ -1,25 +1,49 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Grid/Game.gd" type="Script" id=2]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=3]
 [ext_resource path="res://UI/Level.gd" type="Script" id=4]
 [ext_resource path="res://UI/Goals.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Lightning.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Air.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Rock.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Fire.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Water.wav" type="AudioStream" id=10]
+[ext_resource path="res://UI/Background_Container.gd" type="Script" id=11]
+[ext_resource path="res://Assets/fire-gd21c37d44_1920.jpg" type="Texture" id=12]
+[ext_resource path="res://Assets/firewater.jpg" type="Texture" id=13]
 
 [node name="Game" type="Node2D"]
 process_priority = 1
 script = ExtResource( 2 )
-width = 4
-height = 6
+width = 10
+height = 12
 level = 1
+
+[node name="Background_Container" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Background" type="Sprite" parent="Background_Container"]
+position = Vector2( 6, 6.10352e-05 )
+scale = Vector2( 0.298438, 0.806098 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Background2" type="Sprite" parent="Background_Container"]
+visible = false
+position = Vector2( -377, -13 )
+scale = Vector2( 1.58229, 1.6625 )
+texture = ExtResource( 13 )
+centered = false
 
 [node name="Grid" type="Node2D" parent="."]
 script = ExtResource( 1 )
-x_start = 100
+x_start = 60
 y_start = 800
-offset = 128
-y_offset = 128
-possible_pieces = PoolStringArray( "res://Pieces/Blue.tscn", "res://Pieces/Green.tscn", "res://Pieces/Red.tscn" )
+offset = 50
+y_offset = 50
+possible_pieces = PoolStringArray( "res://Pieces/Air.tscn", "res://Pieces/Fire.tscn", "res://Pieces/Lightning.tscn", "res://Pieces/Rock.tscn", "res://Pieces/Water.tscn" )
 
 [node name="HintTimer" type="Timer" parent="Grid"]
 
@@ -142,6 +166,8 @@ one_shot = true
 [node name="Goals" type="Control" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 5.0
+margin_bottom = 5.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -158,6 +184,23 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Fire" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="Air" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="Water" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
+
+[node name="Rock" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Lightning" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
 
 [connection signal="set_dimensions" from="." to="Grid" method="_on_Game_set_dimensions"]
 [connection signal="timeout" from="DestroyTimer" to="Grid" method="_on_DestroyTimer_timeout"]

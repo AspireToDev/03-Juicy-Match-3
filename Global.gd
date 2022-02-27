@@ -8,18 +8,27 @@ var levels = [
 		"high score": 0,
 		"stars unlocked": 0,
 		"moves":20,
-		"goal": [{ "piece":"Red", "max":5, "count":0 }],
+		"goal": [{ "piece":"Fire", "max":5, "count":0 }],
 		"level": "Level 1",
-		"instructions": "Match 5 red tiles"
+		"instructions": "Match 5 fire tiles"
 	}
 	,{
 		"unlocked": true,
 		"high score": 0,
 		"stars unlocked": 0,
 		"moves":20,
-		"goal": [{ "piece":"Red", "max":5, "count":0 },{ "piece":"Blue", "max":5, "count":0 }],
+		"goal": [{ "piece":"Fire", "max":5, "count":0 },{ "piece":"Water", "max":5, "count":0 }],
 		"level": "Level 2",
-		"instructions": "Match 5 red tiles and 5 blue tiles"
+		"instructions": "Match 5 fire tiles and 5 water tiles"
+	}
+	,{
+		"unlocked": true,
+		"high score": 0,
+		"stars unlocked": 0,
+		"moves":20,
+		"goal": [{ "piece":"Fire", "max":5, "count":0 },{ "piece":"Water", "max":5, "count":0 },{ "piece":"Air", "max":5, "count":0 }],
+		"level": "Level 3",
+		"instructions": "Match 5 fire tiles, 5 water tiles, and 5 air tiles"
 	}
 ]
 

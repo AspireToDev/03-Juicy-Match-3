@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Pieces/Piece.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Air.png" type="Texture" id=2]
@@ -13,7 +13,7 @@ curve = SubResource( 1 )
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.444444, 0.859903 )
-colors = PoolColorArray( 0.386124, 0.941406, 0.498915, 1, 0.114044, 0.789063, 0.662497, 1, 0.405149, 0.765625, 0.158508, 1 )
+colors = PoolColorArray( 0.496094, 0.964569, 1, 1, 0.114044, 0.789063, 0.662497, 1, 0, 0.90625, 1, 1 )
 
 [sub_resource type="GradientTexture" id=4]
 gradient = SubResource( 3 )
@@ -27,36 +27,30 @@ curve = SubResource( 5 )
 [sub_resource type="ParticlesMaterial" id=7]
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
+spread = 30.0
+gravity = Vector3( 300, 0, 0 )
 initial_velocity = 200.0
 angular_velocity = -145.32
 angular_velocity_curve = SubResource( 2 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.1
+scale = 0.3
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 4 )
-
-[sub_resource type="CanvasItemMaterial" id=8]
-blend_mode = 1
 
 [node name="Piece" type="Node2D"]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
+piece = "Air"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Selected" type="Particles2D" parent="."]
-emitting = false
 process_material = SubResource( 7 )
 texture = ExtResource( 2 )
 
 [node name="Highlight" type="Sprite" parent="."]
 visible = false
-modulate = Color( 0.937255, 0.862745, 0.0705882, 1 )
-material = SubResource( 8 )
+modulate = Color( 0, 1, 0.647059, 1 )
 texture = ExtResource( 2 )
-
-[node name="Tween" type="Tween" parent="."]

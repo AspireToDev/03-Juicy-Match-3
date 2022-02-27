@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Pieces/Piece.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Air.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fire.png" type="Texture" id=3]
 
 [sub_resource type="Curve" id=1]
 min_value = -360.0
@@ -12,8 +12,8 @@ _data = [ Vector2( 0.010101, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 144 ), 0.0, 0.0,
 curve = SubResource( 1 )
 
 [sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.444444, 0.859903 )
-colors = PoolColorArray( 0.386124, 0.941406, 0.498915, 1, 0.114044, 0.789063, 0.662497, 1, 0.405149, 0.765625, 0.158508, 1 )
+offsets = PoolRealArray( 0, 0.444444, 0.951691 )
+colors = PoolColorArray( 0.941406, 0.438182, 0.386124, 1, 0.883198, 0.9375, 0.402832, 1, 1, 0.46875, 0, 1 )
 
 [sub_resource type="GradientTexture" id=4]
 gradient = SubResource( 3 )
@@ -28,8 +28,8 @@ curve = SubResource( 5 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
 spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 200.0
+gravity = Vector3( 0, -300, 0 )
+initial_velocity = 100.0
 angular_velocity = -145.32
 angular_velocity_curve = SubResource( 2 )
 orbit_velocity = 0.0
@@ -38,25 +38,20 @@ scale = 0.1
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 4 )
 
-[sub_resource type="CanvasItemMaterial" id=8]
-blend_mode = 1
-
 [node name="Piece" type="Node2D"]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
+piece = "Fire"
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Selected" type="Particles2D" parent="."]
 emitting = false
 process_material = SubResource( 7 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Highlight" type="Sprite" parent="."]
 visible = false
-modulate = Color( 0.937255, 0.862745, 0.0705882, 1 )
-material = SubResource( 8 )
-texture = ExtResource( 2 )
-
-[node name="Tween" type="Tween" parent="."]
+modulate = Color( 0.945098, 0.439216, 0.215686, 1 )
+texture = ExtResource( 3 )

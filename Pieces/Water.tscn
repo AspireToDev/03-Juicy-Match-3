@@ -1,19 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Pieces/Piece.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Air.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Water.png" type="Texture" id=2]
 
 [sub_resource type="Curve" id=1]
 min_value = -360.0
 max_value = 360.0
-_data = [ Vector2( 0.010101, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 144 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0.03125, -78.5455 ), 0.0, 0.0, 0, 0, Vector2( 0.986607, -360 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
 curve = SubResource( 1 )
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.444444, 0.859903 )
-colors = PoolColorArray( 0.386124, 0.941406, 0.498915, 1, 0.114044, 0.789063, 0.662497, 1, 0.405149, 0.765625, 0.158508, 1 )
+colors = PoolColorArray( 0.0536194, 0.719792, 0.980469, 1, 0, 0.358582, 0.976563, 1, 0.116557, 0.0692902, 0.933594, 1 )
 
 [sub_resource type="GradientTexture" id=4]
 gradient = SubResource( 3 )
@@ -24,11 +24,19 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 [sub_resource type="CurveTexture" id=6]
 curve = SubResource( 5 )
 
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0.290179, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.504464, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.803571, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+width = 159
+curve = SubResource( 8 )
+
 [sub_resource type="ParticlesMaterial" id=7]
+trail_size_modifier = SubResource( 9 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
 spread = 180.0
-gravity = Vector3( 0, 0, 0 )
+gravity = Vector3( 0, 300, 0 )
 initial_velocity = 200.0
 angular_velocity = -145.32
 angular_velocity_curve = SubResource( 2 )
@@ -38,12 +46,10 @@ scale = 0.1
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 4 )
 
-[sub_resource type="CanvasItemMaterial" id=8]
-blend_mode = 1
-
 [node name="Piece" type="Node2D"]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
+piece = "Water"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -55,8 +61,5 @@ texture = ExtResource( 2 )
 
 [node name="Highlight" type="Sprite" parent="."]
 visible = false
-modulate = Color( 0.937255, 0.862745, 0.0705882, 1 )
-material = SubResource( 8 )
+modulate = Color( 0, 0.929412, 1, 1 )
 texture = ExtResource( 2 )
-
-[node name="Tween" type="Tween" parent="."]
