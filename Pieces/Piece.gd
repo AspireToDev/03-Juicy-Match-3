@@ -67,6 +67,7 @@ func make_adjacent_bomb():
 
 func make_color_bomb():
 	is_color_bomb = true
+	$Sprite.texture = load("res://Assets/" + piece + " Color.png")
 	piece = "Color"
 
 func die():

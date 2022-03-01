@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Home Background.png" type="Texture" id=2]
-[ext_resource path="res://UI/connection_ii/ConnectionII.tres" type="DynamicFont" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -75,7 +74,6 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_right = 576.0
 margin_bottom = 512.0
-custom_fonts/font = ExtResource( 3 )
 text = "Welcome to Match-3"
 align = 1
 valign = 1
