@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Grid/Game.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://UI/Background_Container.gd" type="Script" id=11]
 [ext_resource path="res://Assets/fire-gd21c37d44_1920.jpg" type="Texture" id=12]
 [ext_resource path="res://Assets/firewater.jpg" type="Texture" id=13]
+[ext_resource path="res://UI/AudioStreamPlayer.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Song1.ogg" type="AudioStream" id=15]
 
 [node name="Game" type="Node2D"]
 process_priority = 1
@@ -71,12 +73,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="UI/HUD"]
+anchor_right = 1.0
+margin_bottom = 30.0
+color = Color( 0, 0, 0, 0.827451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Score" type="Label" parent="UI/HUD"]
 margin_left = 5.0
 margin_top = 7.0
 margin_right = 255.0
 margin_bottom = 22.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Score: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,7 +100,7 @@ margin_left = -255.0
 margin_top = 7.0
 margin_right = -5.0
 margin_bottom = 22.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Moves: "
 align = 2
 valign = 1
@@ -97,10 +108,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="UI/HUD"]
+[node name="Goals" type="Control" parent="UI"]
 anchor_right = 1.0
-margin_bottom = 30.0
-color = Color( 1, 1, 1, 0.376471 )
+anchor_bottom = 1.0
+margin_top = 5.0
+margin_bottom = 5.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/Goals"]
+margin_left = 5.0
+margin_top = 911.0
+margin_right = 581.0
+margin_bottom = 1026.0
+color = Color( 0, 0, 0, 0.631373 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goals" type="Label" parent="UI/Goals"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Level" type="Control" parent="UI"]
 pause_mode = 2
@@ -163,28 +202,6 @@ valign = 1
 wait_time = 3.0
 one_shot = true
 
-[node name="Goals" type="Control" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 5.0
-margin_bottom = 5.0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Goals" type="Label" parent="UI/Goals"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -104.0
-margin_bottom = -4.0
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Sounds" type="Node" parent="."]
 
 [node name="Fire" type="AudioStreamPlayer" parent="Sounds"]
@@ -202,8 +219,15 @@ stream = ExtResource( 8 )
 [node name="Lightning" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 6 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -50.0
+autoplay = true
+script = ExtResource( 14 )
+
 [connection signal="set_dimensions" from="." to="Grid" method="_on_Game_set_dimensions"]
 [connection signal="timeout" from="DestroyTimer" to="Grid" method="_on_DestroyTimer_timeout"]
 [connection signal="timeout" from="RefillTimer" to="Grid" method="_on_RefillTimer_timeout"]
 [connection signal="timeout" from="CollapseTimer" to="Grid" method="_on_CollapseTimer_timeout"]
 [connection signal="timeout" from="UI/Level/Timer" to="UI/Level" method="_on_Timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
