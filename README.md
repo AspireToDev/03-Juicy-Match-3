@@ -1,4 +1,4 @@
-# Project Name
+# Elemental Match 3
 Project 3 for Indiana University's Game Technology Course
 
 Developed from 2/20/2022 to 3/2/2022
@@ -50,17 +50,4 @@ Hopeful to add shaders that act on line and adjacent explosions. Individualizing
 Scoring system using "Element Tokens" which would be similar to the coin animation that spawns the coins on the dying piece and then tweens into the top left corner. Still need to create this asset and implement this system when I have the time.
 
 ## Created by
-```
-
-The grading criteria will be as follows:
-
- - [1 point] Assignment turned in on time
- - [1] Repository contains a descriptive README.md
- - [1] No (script) syntax errors
- - [1] No other runtime errors
- - [2] Contains at least two levels (with different game-play mechanics)
- - [2] Score is tracked, some kind of end-game condition
- - [1] Main menu
- - [1] End-game screen
- - [8] Features to make the game more "juicy"
- - [2] The overall juiciness
+Ian Brower
