@@ -55,12 +55,15 @@ func dim():
 
 func make_column_bomb():
 	is_column_bomb = true
+	$Sprite.texture = load("res://Assets/" + piece + " Column.png")
 
 func make_row_bomb():
 	is_row_bomb = true
+	$Sprite.texture = load("res://Assets/" + piece + " Row.png")
 
 func make_adjacent_bomb():
 	is_adjacent_bomb = true
+	$Sprite.texture = load("res://Assets/" + piece + " Adjacent.png")
 
 func make_color_bomb():
 	is_color_bomb = true
