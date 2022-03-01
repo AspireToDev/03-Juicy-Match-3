@@ -9,11 +9,17 @@ My theme for my Match-3 game is natural elements. Drawing from themes like Avata
 
 ## Implementation
 1 Background Song that loops
+
 Animated title screen
+
 3 backgrounds 
+
 3 different levels that ramp in difficulty
+
 5 individual sprites that were hand drawn in Piskel
+
 5 sound effects for the death of each piece
+
 4 Additional sprites per piece to represent the Row,Column, Adjacent, and Color bombs. (20 Additional sprites)
 
 
