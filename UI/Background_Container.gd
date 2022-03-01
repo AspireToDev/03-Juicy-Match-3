@@ -11,4 +11,9 @@ func _ready():
 func _physics_process(delta):
 	if Global.current_level == 1:
 		$Background.hide()
+		$Background3.hide()
 		$Background2.show() 
+	elif Global.current_level == 2:
+		$Background.hide()
+		$Background2.hide()
+		$Background3.show()

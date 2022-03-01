@@ -58,7 +58,7 @@ __meta__ = {
 position = Vector2( 280.5, 575 )
 scale = Vector2( 2.09259, 1 )
 frames = SubResource( 8 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="Background" type="ColorRect" parent="."]

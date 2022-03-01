@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Grid/Game.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/firewater.jpg" type="Texture" id=13]
 [ext_resource path="res://UI/AudioStreamPlayer.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Song1.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Lightning background.jpg" type="Texture" id=16]
 
 [node name="Game" type="Node2D"]
 process_priority = 1
@@ -38,6 +39,11 @@ position = Vector2( -377, -13 )
 scale = Vector2( 1.58229, 1.6625 )
 texture = ExtResource( 13 )
 centered = false
+
+[node name="Background3" type="Sprite" parent="Background_Container"]
+visible = false
+position = Vector2( 22, 328 )
+texture = ExtResource( 16 )
 
 [node name="Grid" type="Node2D" parent="."]
 script = ExtResource( 1 )
