@@ -47,6 +47,7 @@ piece = "Lightning"
 texture = ExtResource( 2 )
 
 [node name="Selected" type="Particles2D" parent="."]
+emitting = false
 process_material = SubResource( 7 )
 texture = ExtResource( 2 )
 
