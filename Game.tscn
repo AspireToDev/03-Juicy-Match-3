@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Grid/Game.gd" type="Script" id=2]
@@ -16,6 +16,22 @@
 [ext_resource path="res://UI/AudioStreamPlayer.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Song1.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Assets/Lightning background.jpg" type="Texture" id=16]
+[ext_resource path="res://UI/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-BlackIt.ttf" type="DynamicFontData" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 17 )
 
 [node name="Game" type="Node2D"]
 process_priority = 1
@@ -98,8 +114,7 @@ margin_left = 5.0
 margin_top = 7.0
 margin_right = 255.0
 margin_bottom = 22.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Score: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,7 +127,7 @@ margin_left = -255.0
 margin_top = 7.0
 margin_right = -5.0
 margin_bottom = 22.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Moves: "
 align = 2
 valign = 1
@@ -147,6 +162,7 @@ anchor_bottom = 1.0
 margin_top = -104.0
 margin_bottom = -4.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
 align = 1
 valign = 1
 __meta__ = {
@@ -192,6 +208,7 @@ anchor_bottom = 0.5
 margin_top = -47.0
 margin_bottom = -7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Level 1"
 align = 1
 valign = 1
@@ -206,6 +223,7 @@ anchor_bottom = 0.5
 margin_top = 8.0
 margin_bottom = 68.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Match 15 red blocks"
 align = 1
 valign = 1
