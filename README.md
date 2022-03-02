@@ -22,6 +22,8 @@ Animated title screen
 
 4 Additional sprites per piece to represent the Row,Column, Adjacent, and Color bombs. (20 Additional sprites)
 
+Updated Fonts for Main Menu, Game (Score, Moves, Instructions, Goals), Win, and Lose scenes
+
 
 
 ## References
