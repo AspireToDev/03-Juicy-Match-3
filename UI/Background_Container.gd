@@ -8,7 +8,7 @@ var pic2 = preload("res://Assets/firewater.jpg")
 func _ready():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Global.current_level == 1:
 		$Background.hide()
 		$Background3.hide()

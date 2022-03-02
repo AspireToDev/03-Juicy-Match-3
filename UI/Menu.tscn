@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Home Background.png" type="Texture" id=2]
@@ -51,6 +51,12 @@ animations = [ {
 size = 37
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 3 )
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -63,7 +69,7 @@ __meta__ = {
 position = Vector2( 280.5, 575 )
 scale = Vector2( 2.09259, 1 )
 frames = SubResource( 8 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Background" type="ColorRect" parent="."]
@@ -92,6 +98,7 @@ margin_left = 238.0
 margin_top = 512.0
 margin_right = 338.0
 margin_bottom = 552.0
+custom_fonts/font = SubResource( 10 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -102,6 +109,7 @@ margin_left = 238.0
 margin_top = 562.0
 margin_right = 338.0
 margin_bottom = 602.0
+custom_fonts/font = SubResource( 11 )
 text = "Quit"
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

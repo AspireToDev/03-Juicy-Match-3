@@ -55,7 +55,7 @@ func _ready():
 
 func reset():
 	score = 0
-	moves = 100
+	moves = 5
 	goal = []
 	current_level = 0
 

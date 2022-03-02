@@ -1,7 +1,6 @@
 extends Control
 
 func _ready():
-	load("res://UI/connection_ii/ConnectionII.otf")
 	pass
 
 
