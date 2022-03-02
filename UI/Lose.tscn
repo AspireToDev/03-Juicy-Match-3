@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Loser fire.png" type="Texture" id=2]
+[ext_resource path="res://UI/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-BlackIt.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -9,6 +14,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 629, 472 )
+texture = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_left = 10.0
@@ -23,6 +32,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_right = 576.0
 margin_bottom = 512.0
+custom_fonts/font = SubResource( 1 )
 text = "You lose"
 align = 1
 valign = 1

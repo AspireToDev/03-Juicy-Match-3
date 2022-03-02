@@ -22,6 +22,8 @@ Animated title screen
 
 4 Additional sprites per piece to represent the Row,Column, Adjacent, and Color bombs. (20 Additional sprites)
 
+Updated Fonts for Main Menu, Game (Score, Moves, Instructions, Goals), Win, and Lose scenes
+
 
 
 ## References
@@ -40,6 +42,8 @@ All sprites were created utilizing https://www.piskelapp.com/
 All sound effects were created utilizing https://www.audacityteam.org/
 
 The music was created by utilizing https://musescore.org/en
+
+Font was sourced from https://godotengine.org/asset-library/asset/316
 
 
 

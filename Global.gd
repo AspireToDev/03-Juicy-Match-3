@@ -7,7 +7,7 @@ var levels = [
 		"unlocked": true,
 		"high score": 0,
 		"stars unlocked": 0,
-		"moves":10,
+		"moves":5,
 		"goal": [{ "piece":"Fire", "max":5, "count":0 }],
 		"level": "Level 1",
 		"instructions": "Match 5 fire tiles"
@@ -16,7 +16,7 @@ var levels = [
 		"unlocked": true,
 		"high score": 0,
 		"stars unlocked": 0,
-		"moves":15,
+		"moves":10,
 		"goal": [{ "piece":"Fire", "max":5, "count":0 },{ "piece":"Water", "max":5, "count":0 }],
 		"level": "Level 2",
 		"instructions": "Match 5 fire tiles and 5 water tiles"
@@ -25,7 +25,7 @@ var levels = [
 		"unlocked": true,
 		"high score": 0,
 		"stars unlocked": 0,
-		"moves":20,
+		"moves":15,
 		"goal": [{ "piece":"Fire", "max":10, "count":0 },{ "piece":"Water", "max":10, "count":0 },{ "piece":"Lightning", "max":10, "count":0 }],
 		"level": "Level 3",
 		"instructions": "Match 10 fire tiles, 10 water tiles, and 10 lightning tiles"
@@ -77,7 +77,8 @@ func change_score(s):
 func change_moves(m):
 	moves += m
 	if moves <= 0:
-		var _scene = get_tree().change_scene("res://UI/Lose.tscn") 
+		var _scene = get_tree().change_scene("res://UI/Lose.tscn")
+		 
 	emit_signal("changed")
 
 func update_level(l):
