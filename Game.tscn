@@ -24,6 +24,12 @@ width = 10
 height = 12
 level = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -30.0
+autoplay = true
+script = ExtResource( 14 )
+
 [node name="Background_Container" type="Node2D" parent="."]
 script = ExtResource( 11 )
 
@@ -225,15 +231,9 @@ stream = ExtResource( 8 )
 [node name="Lightning" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 6 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 15 )
-volume_db = -50.0
-autoplay = true
-script = ExtResource( 14 )
-
 [connection signal="set_dimensions" from="." to="Grid" method="_on_Game_set_dimensions"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 [connection signal="timeout" from="DestroyTimer" to="Grid" method="_on_DestroyTimer_timeout"]
 [connection signal="timeout" from="RefillTimer" to="Grid" method="_on_RefillTimer_timeout"]
 [connection signal="timeout" from="CollapseTimer" to="Grid" method="_on_CollapseTimer_timeout"]
 [connection signal="timeout" from="UI/Level/Timer" to="UI/Level" method="_on_Timer_timeout"]
-[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]

@@ -77,7 +77,8 @@ func change_score(s):
 func change_moves(m):
 	moves += m
 	if moves <= 0:
-		var _scene = get_tree().change_scene("res://UI/Lose.tscn") 
+		var _scene = get_tree().change_scene("res://UI/Lose.tscn")
+		 
 	emit_signal("changed")
 
 func update_level(l):
