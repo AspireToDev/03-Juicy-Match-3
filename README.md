@@ -43,6 +43,8 @@ All sound effects were created utilizing https://www.audacityteam.org/
 
 The music was created by utilizing https://musescore.org/en
 
+Font was sourced from https://godotengine.org/asset-library/asset/316
+
 
 
 ## Future Development
